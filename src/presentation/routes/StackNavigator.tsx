@@ -37,7 +37,7 @@ export const StackkNavigator = () => {
       <Stack.Screen name="LogoutSc" component={LogoutSc}/>
       <Stack.Screen name="RegisterSc" component={RegisterSc}/>
       <Stack.Screen name="ConfigSc" component={ConfigSc} options={{ title: 'Ajustes' }}/>
-      <Stack.Screen name="MeinNutzerSc" component={MeinNutzerSc} options={{ headerShown: false }}/>
+      <Stack.Screen name="MeinNutzerSc" component={MeinNutzerSc} options={{ title: 'Usuario' }}/>
     </Stack.Navigator>
   );
 };

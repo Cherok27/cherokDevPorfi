@@ -1,0 +1,1 @@
+export { usefadeAnimation } from './useFadeAnimation';

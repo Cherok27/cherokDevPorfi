@@ -4,6 +4,11 @@ export const premium = [
       icon: 'diamond-outline',
       component: 'MiServicio',
     },
+    {
+      name: 'Game',
+      icon: 'game-controller-outline',
+      component: 'GameSc',
+    },
   ];
 export const configs = [
     {
@@ -42,11 +47,6 @@ export const helper = [
         name: 'Sugerencias',
         icon: 'chatbox-ellipses-outline',
         component: 'SugeScreen',
-      },
-      {
-        name: 'Cómo usar la IA',
-        icon: 'camera-outline',
-        component: 'ModalScreen',
       },
     ];
 export const cuenta = [

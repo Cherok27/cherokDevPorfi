@@ -1,3 +1,4 @@
+export { GameSc } from './game/GameSc';
 export { ConfigSc } from './config/ConfigSc';
 export { HeroeSc } from './Heroe/HeroeSc';
 export { MeinNutzerSc } from './nutzer/MeinNutzerSc';

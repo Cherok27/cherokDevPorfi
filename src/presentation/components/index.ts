@@ -1,4 +1,4 @@
-export { Card } from './ui';
+export { Card } from './ui/Card';
 export { Separator } from './Separator';
 export{ MenuConfig } from './MenuConfig';
 export { SubTitle } from './ui/SubTitle';

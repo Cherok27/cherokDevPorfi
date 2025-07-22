@@ -2,7 +2,9 @@ import { createStackNavigator, StackCardStyleInterpolator } from '@react-navigat
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { LoginSc, LogoutSc, RegisterSc } from '../screens/auth';
-import { ConfigSc, MeinNutzerSc } from '../screens';
+import { ConfigSc, GameSc, MeinNutzerSc } from '../screens';
+
+
 
 
 export type RootStackParams = {
@@ -11,6 +13,7 @@ export type RootStackParams = {
  RegisterSc: undefined;
  ConfigSc: undefined;
  MeinNutzerSc: undefined;
+ GameSc: undefined;
 }
 const Stack = createStackNavigator<RootStackParams>();
 const fadeAnimation: StackCardStyleInterpolator = ({ current }) => ({
@@ -38,6 +41,7 @@ export const StackkNavigator = () => {
       <Stack.Screen name="RegisterSc" component={RegisterSc}/>
       <Stack.Screen name="ConfigSc" component={ConfigSc} options={{ title: 'Ajustes' }}/>
       <Stack.Screen name="MeinNutzerSc" component={MeinNutzerSc} options={{ title: 'Usuario' }}/>
+      <Stack.Screen name="GameSc" component={GameSc} options={{ title: 'Game' }}/>
     </Stack.Navigator>
   );
 };

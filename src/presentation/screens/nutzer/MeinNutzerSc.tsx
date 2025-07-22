@@ -36,6 +36,7 @@ export const MeinNutzerSc = () => {
               <IconCustom name="mail"  color="white"/>
               <Texto text= "Email" style={styles.emailText} />
               <Texto text={user.email} style={styles.emailText} />
+              <IconCustom name= "pencil" size={20} color="white"/>
           </Card>
           <View style={styles.Separator}/>
           <Card style={styles.guardsCard} >

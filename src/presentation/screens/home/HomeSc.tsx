@@ -15,11 +15,11 @@ export const HomeSc = ({navigation}:Props) => {
         <CustomView margin >
           <ScrollView>
             <Card style={styles.cardContainer}>
+                <LogoImg/>
                 <View style={styles.rightButton}>
                   <Icons name="settings" onPress={() => navigation.navigate('StackNavigator')}/>
                 </View>
                 <View style={styles.Separator}/>
-                <LogoImg/>
                 <View style={styles.Separator}/>
                 <Card style={styles.imageCenterView}>
                     <Image style={styles.imageCenterMain}
@@ -28,7 +28,7 @@ export const HomeSc = ({navigation}:Props) => {
                 <View style={styles.Separator}/>
                 <Card style={styles.cardDescription}>
                     <View style={styles.Separator}/>
-                    <Texto text="José Carlos Ramos Hernández" style={styles.h1} />
+                    <Texto text="José Carlos" style={styles.h1} />
                     <View style={styles.Separator}/>
                     <View style={styles.ViewInfo}>
                         <View style={styles.ViewInfo2}>
@@ -46,12 +46,72 @@ export const HomeSc = ({navigation}:Props) => {
                     </View>
                 </Card>
                 <View style={styles.Separator}/>
-                <Texto text="Últimos Proyectos"/>
+                <Card style={styles.lineCardContainer}>
+                    <Texto text="Últimos Proyectos" style={styles.h1}/>
+                    <View style={styles.lineCard}/>
+                </Card>
+                <View style={styles.rowCards}>
+                  <Pressable onPress={() => emailPage('josecarlosrh93@gmail.com')}>
+                    <Card style={styles.proyectCard} >
+                        <IconCustom name="mail"  color="white"/>
+                        <Texto text= "Grima Scale" />
+                    </Card>
+                  </Pressable>
+                  <Pressable onPress={() => webPage('https://github.com/Cherok27')}>
+                    <Card style={styles.proyectCard}>
+                        <IconCustom name="logo-github" color="white"/>
+                        <Texto text="Bluey" />
+                    </Card>
+                  </Pressable>
+                  <Pressable onPress={() => webPage('https://github.com/Cherok27')}>
+                    <Card style={styles.proyectCard}>
+                        <IconCustom name="logo-github" color="white"/>
+                        <Texto text="Cafeteria 4All" />
+                    </Card>
+                  </Pressable>
+                </View>
+
+                <Card style={styles.lineCardContainer}>
+                    <Texto text="Tech Stack" style={styles.h1}/>
+                    <View style={styles.lineCard}/>
+                </Card>
+                <View style={styles.rowCards}>
+                    <Card>
+                    <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/node.png')}/>
+                    </Card>
+                    <Card>
+                    <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/api.png')}/>
+                    </Card>
+                    <Card>
+                    <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/react.png')}/>
+                    </Card>
+                    <Card>
+                    <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/js.png')}/>
+                    </Card>
+                </View>
+                <View style={styles.rowCards}>
+                    <Card>
+                    <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/node.png')}/>
+                    </Card>
+                    <Card>
+                    <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/api.png')}/>
+                    </Card>
+                    <Card>
+                    <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/react.png')}/>
+                    </Card>
+                    <Card>
+                    <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/js.png')}/>
+                    </Card>
+                </View>
+                <Card style={styles.lineCardContainer}>
+                    <Texto text="Contacto" style={styles.h1}/>
+                    <View style={styles.lineCard}/>
+                </Card>
                 <View style={styles.rowCards}>
                   <Pressable style={styles.flex1} onPress={() => emailPage('josecarlosrh93@gmail.com')}>
                   <Card style={styles.emailCard} >
                       <IconCustom name="mail"  color="white"/>
-                      <Texto text= "Email" style={styles.emailText} />
+                      <Texto text= "Email:" style={styles.emailText} />
                       <Texto text= "josecarlosrh93@gmail.com" style={styles.emailText} />
                   </Card>
                   </Pressable>
@@ -61,21 +121,6 @@ export const HomeSc = ({navigation}:Props) => {
                       <Texto text="@Cherok27" style={styles.emailText}/>
                   </Card>
                   </Pressable>
-                </View>
-                <View style={styles.Separator}/>
-                <View style={styles.rowCards}>
-                <Card>
-                  <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/node.png')}/>
-                </Card>
-                <Card>
-                  <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/api.png')}/>
-                </Card>
-                <Card>
-                 <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/react.png')}/>
-                </Card>
-                <Card>
-                  <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/js.png')}/>
-                </Card>
                 </View>
             </Card>
           </ScrollView>
@@ -104,9 +149,6 @@ const styles = StyleSheet.create({
     cardDescription:{
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#333333',
-        margin: -10,
-        borderRadius: 0,
     },
     imageCenter:{
         height: 50,
@@ -148,15 +190,28 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     githubCard: {
-        // width: 90, // ajusta el ancho según lo que necesites
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#404040',
+        backgroundColor: '#272727',
         flex: 1,
     },
     rightButton:{
         flexDirection:'row',
         justifyContent: 'flex-end',
         marginTop: 10,
+    },
+    lineCard: {
+        height: 0.3,
+        backgroundColor: '#efb810',
+        flex:1,
+        marginLeft: 9,
+    },
+    lineCardContainer: {
+        flexDirection:'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
+    proyectCard: {
+        // backgroundColor
     },
 });

@@ -97,3 +97,27 @@ export const info = [
         component: 'ShareSc',
       },
     ];
+export const abecedario = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+export const palabrasAhorcado = [
+  'PROGRAMACION',
+  'REACT',
+  'NATIVO',
+  'JAVASCRIPT',
+  'AHORCADO',
+  'DESARROLLO',
+  'COMPONENTE',
+  'FUNCION',
+  'VARIABLE',
+  'ESTADO',
+  'PROPIEDAD',
+  'HOOK',
+  'ANDROID',
+  'IOS',
+  'PROYECTO',
+  'APLICACION',
+  'INTERFAZ',
+  'USUARIO',
+  'SISTEMA',
+  'JUEGO',
+  'CODIGO','ALGORITMO','OBJETO','ARRAY','MODULO','SERVICIO','REDUX','ZUSTAND','NAVIGATOR','ESTILO','TIPADO',
+];

@@ -22,7 +22,7 @@ export const authLogin = async (email: string, pasword: string) => {
     email = email.toLowerCase();
     console.log(email,pasword);
     try {
-        const {data} = await PorfolioNestApi.post<AuthResponse>('auth/login',{
+        const {data} = await PorfolioNestApi.post<AuthResponse>('/auth/login',{
             email,
             pasword,
         });

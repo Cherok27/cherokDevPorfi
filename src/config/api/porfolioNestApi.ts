@@ -6,9 +6,7 @@ import { StorageAdapter } from '../adapters/storage-adapter';
 export const API_URL = (STAGE === 'pro') ? PROD_URL : Platform.OS === 'ios' ? API_URL_IOS : API_URL_ANDROID;
 const PorfolioNestApi = axios.create({
     baseURL: API_URL,
-    headers: {
-        'Content-Type' : 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
 });
 
 PorfolioNestApi.interceptors.request.use(

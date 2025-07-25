@@ -8,8 +8,8 @@ import { IconCustom } from '../../icons/Icons';
 
 
 export const MeinNutzerSc = () => {
-    const user = useAuthStore((state) => state.user);
-    console.log(user);
+    const {user} = useAuthStore();
+    console.log(user?.roles);
     if (user) {
       return (
         <CustomView margin>

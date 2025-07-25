@@ -19,8 +19,8 @@ const returnUserToken = (data: AuthResponse) => {
 };
 
 export const authLogin = async (email: string, pasword: string) => {
-    console.log(email,pasword);
     email = email.toLowerCase();
+    console.log(email,pasword);
     try {
         const {data} = await PorfolioNestApi.post<AuthResponse>('auth/login',{
             email,
@@ -35,9 +35,9 @@ export const authLogin = async (email: string, pasword: string) => {
 
 export const authCheckStatus = async () => {
     try {
-        console.log('authchekc')
+        console.log('authchekc');
         const {data} = await PorfolioNestApi.get<AuthResponse>('auth/check-status');
-        console.log(data, 'auth puert')
+        console.log(data, 'auth puert');
         return returnUserToken(data);
     } catch (error) {
         return null;

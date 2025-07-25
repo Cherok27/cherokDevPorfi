@@ -2,7 +2,7 @@ export const premium = [
     {
       name: 'Premium',
       icon: 'diamond-outline',
-      component: 'MiServicio',
+      component: 'PremiumSc',
     },
     {
       name: 'Game',

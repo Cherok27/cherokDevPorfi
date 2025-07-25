@@ -5,24 +5,24 @@ import { ThemeContext } from '../../context/ThemeContext';
 interface Props {
     style?:  StyleProp<ImageStyle>
 }
-export const LogoImg = ({style}: Props) => {
+export const BannerName = ({style}: Props) => {
     const {isDark} = useContext(ThemeContext);
     const logoImg = isDark ?
-    require('../../assets/LogoDark.png')
+    require('../../assets//BannerDark.png')
     :
-    require('../../assets/LogoLight.png');
+    require('../../assets/BannerLi.png');
     return (
       <Image source={logoImg} style={[styles.logoImg,style]}/>
     );
 };
 const styles = StyleSheet.create({
     logoImg:{
-        width: 300,
-        height: 300,
+        width: 222,
+        height: 222,
         opacity: 0.3,
         position: 'absolute',
-        top: -12,
-        right: 40,
+        top: -80,
+        right: 80,
     },
 });
 

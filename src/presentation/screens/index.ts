@@ -1,3 +1,4 @@
+export { PremiumSc } from './premium/PremiumSc';
 export { GameSc } from './game/GameSc';
 export { ConfigSc } from './config/ConfigSc';
 export { HeroeSc } from './Heroe/HeroeSc';

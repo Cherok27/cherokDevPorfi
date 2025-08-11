@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthStore } from '../../store';
+import { LoadingSc } from '../loading/LoadingSc';
 
 export const LogoutSc = () => {
     const {logout} = useAuthStore();
@@ -7,6 +8,6 @@ export const LogoutSc = () => {
       logout();
     });
   return (
-    <></>
+    <LoadingSc/>
   );
 };

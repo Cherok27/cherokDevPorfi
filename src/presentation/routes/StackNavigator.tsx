@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { LoginSc, LogoutSc, RegisterSc } from '../screens/auth';
 import { ConfigSc, GameSc, MeinNutzerSc, PremiumSc } from '../screens';
+import { ChatSc } from '../screens/chat/ChatSc';
 
 
 
@@ -16,6 +17,7 @@ export type RootStackParams = {
  MeinNutzerSc: undefined;
  GameSc: undefined;
  PremiumSc: undefined;
+ ChatSc: undefined;
 }
 const Stack = createStackNavigator<RootStackParams>();
 const fadeAnimation: StackCardStyleInterpolator = ({ current }) => ({
@@ -39,12 +41,13 @@ export const StackkNavigator = () => {
     }}
     >
       <Stack.Screen name="LoginSc" component={LoginSc} options={{ headerShown: false }}/>
-      <Stack.Screen name="LogoutSc" component={LogoutSc}/>
+      <Stack.Screen name="LogoutSc" component={LogoutSc} options={{ headerShown: false }}/>
       <Stack.Screen name="RegisterSc" component={RegisterSc}/>
       <Stack.Screen name="ConfigSc" component={ConfigSc} options={{ title: 'Ajustes' }}/>
       <Stack.Screen name="MeinNutzerSc" component={MeinNutzerSc} options={{ title: 'Usuario' }}/>
       <Stack.Screen name="GameSc" component={GameSc} options={{ title: 'Game' }}/>
       <Stack.Screen name="PremiumSc" component={PremiumSc} options={{ title: 'Premium' }}/>
+      <Stack.Screen name="ChatSc" component={ChatSc} options={{ title: 'Chat' }}/>
     </Stack.Navigator>
   );
 };

@@ -67,6 +67,11 @@ export const cuentaOn = [
         icon: 'exit-outline',
         component: 'LogoutSc',
       },
+      {
+        name: 'Chat',
+        icon: 'chatbox-outline',
+        component: 'ChatSc',
+      },
     ];
 export const legal = [
       {

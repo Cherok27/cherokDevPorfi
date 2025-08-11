@@ -7,7 +7,7 @@ import { RootStackParamList } from '../../routes/StackNavigatiorMain';
 interface Props extends StackScreenProps<RootStackParamList, 'HeroeSc'> {}
 export const HeroeSc = ({navigation}:Props) => {
     return(
-        <CustomView style={styles.customView}>
+        <CustomView margin style={styles.customView}>
             <View>
                 <Image source={require('../../assets/HeroImg.png')} style={styles.logoImage}/>
             </View>

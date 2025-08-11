@@ -1,18 +1,32 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, RefreshControl, StyleSheet, View, Dimensions } from 'react-native';
 import React from 'react';
 import { Card, CustomView, Texto } from '../../components';
 import { useAuthStore } from '../../store';
 import LinearGradient from 'react-native-linear-gradient';
 import { LoadingSc } from '../loading/LoadingSc';
 import { IconCustom } from '../../icons/Icons';
+import { ScrollView } from 'react-native-gesture-handler';
 
-
+const {width, height} = Dimensions.get('window');
 export const MeinNutzerSc = () => {
-    const {user} = useAuthStore();
-    console.log(user?.roles);
-    if (user) {
+  const { user, checkStatus } = useAuthStore();
+  const [refreshing,setRefreshing] = React.useState(false);
+  const onRefresh = async () =>{
+    setRefreshing(true);
+    await checkStatus();
+      setRefreshing(false);
+    };
+    if (user && user.roles) {
       return (
         <CustomView margin>
+          <ScrollView
+           refreshControl={
+           <RefreshControl
+           refreshing={refreshing}
+           onRefresh={onRefresh}
+           tintColor={'#efb810'}
+           />}
+          >
           <Card style={styles.avatarContainer}>
             <LinearGradient
                 colors={['#efb810', '#FFFFFF00']}
@@ -48,8 +62,9 @@ export const MeinNutzerSc = () => {
           <Card style={styles.lastLoginCard} >
               <IconCustom name="hourglass-outline"  color="white"/>
               <Texto text= "Last Login" style={styles.emailText} />
-              <Texto text={new Date(user.createdAt).toLocaleDateString('es-Es',{ day: '2-digit',year: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})} style={styles.emailText} />
+              <Texto text={new Date(user.lastLogin).toLocaleDateString('es-Es',{ day: '2-digit',year: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})} style={styles.emailText} />
           </Card>
+          </ScrollView>
         </CustomView>
       );
     } else {
@@ -64,8 +79,8 @@ const styles = StyleSheet.create({
         borderRadius: 100,
       },
       avatar: {
-        width: 80,
-        height: 80,
+        width: width * 0.22,
+        height: height * 0.1,
         borderRadius: 40,
       },
       avatarContainer: {
@@ -98,3 +113,4 @@ const styles = StyleSheet.create({
       },
 
 });
+

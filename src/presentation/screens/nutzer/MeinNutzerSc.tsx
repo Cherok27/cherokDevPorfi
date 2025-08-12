@@ -6,6 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { LoadingSc } from '../loading/LoadingSc';
 import { IconCustom } from '../../icons/Icons';
 import { ScrollView } from 'react-native-gesture-handler';
+import { LogoImg } from '../../components/ui';
 
 const {width, height} = Dimensions.get('window');
 export const MeinNutzerSc = () => {
@@ -19,12 +20,14 @@ export const MeinNutzerSc = () => {
     if (user && user.roles) {
       return (
         <CustomView margin>
+          <LogoImg/>
           <ScrollView
            refreshControl={
            <RefreshControl
            refreshing={refreshing}
            onRefresh={onRefresh}
            tintColor={'#efb810'}
+           colors={['#efb810']}
            />}
           >
           <Card style={styles.avatarContainer}>
@@ -48,20 +51,20 @@ export const MeinNutzerSc = () => {
           <View style={styles.Separator}/>
           <Card style={styles.emailCard} >
               <IconCustom name="mail"  color="white"/>
-              <Texto text= "Email" style={styles.emailText} />
+              <Texto text= "Email:" style={styles.emailText} />
               <Texto text={user.email} style={styles.emailText} />
-              <IconCustom name= "pencil" size={20} color="white"/>
+              {/* <IconCustom name= "pencil" size={20} color="white"/> */}
           </Card>
           <View style={styles.Separator}/>
           <Card style={styles.guardsCard} >
               <IconCustom name="shield-outline"  color="white"/>
-              <Texto text= "Rols" style={styles.emailText} />
+              <Texto text= "Rols:" style={styles.emailText} />
               <Texto text={user.roles.join(', ')} style={styles.emailText} />
           </Card>
           <View style={styles.Separator}/>
           <Card style={styles.lastLoginCard} >
               <IconCustom name="hourglass-outline"  color="white"/>
-              <Texto text= "Last Login" style={styles.emailText} />
+              <Texto text= "Last Login:" style={styles.emailText} />
               <Texto text={new Date(user.lastLogin).toLocaleDateString('es-Es',{ day: '2-digit',year: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})} style={styles.emailText} />
           </Card>
           </ScrollView>

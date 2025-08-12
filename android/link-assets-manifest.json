@@ -2,39 +2,7 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "asset/fonts/ringbearer/alphabet.gif",
-      "sha1": "6e369937e807130410fbf81a90c2881ac7e16c97"
-    },
-    {
-      "path": "asset/fonts/ringbearer/example1.gif",
-      "sha1": "e7beb0b9cdfbe1954af3e43317a62d321dcfdd47"
-    },
-    {
-      "path": "asset/fonts/ringbearer/example2.gif",
-      "sha1": "048087c4ed76ed9b5a32ff510b09cb5c43cbd080"
-    },
-    {
-      "path": "asset/fonts/ringbearer/example3.gif",
-      "sha1": "7d5d4551bcc1f6916af5b2b8d21e3dd0de71c8b6"
-    },
-    {
-      "path": "asset/fonts/ringbearer/file_id.diz",
-      "sha1": "a393a4d3ae57260ef58d61c5e5765bc34c873e80"
-    },
-    {
-      "path": "asset/fonts/ringbearer/liesmich.html",
-      "sha1": "b962fc4f91438d017bb85e49e2d9790e7e3fba6e"
-    },
-    {
-      "path": "asset/fonts/ringbearer/readme.html",
-      "sha1": "0c923697c8a1e85206faf05fdc298a72faeff51b"
-    },
-    {
-      "path": "asset/fonts/ringbearer/ringbearer.gif",
-      "sha1": "53169651df9f753dcb1983886bbadb52f29e17ef"
-    },
-    {
-      "path": "asset/fonts/ringbearer/RINGM___.TTF",
+      "path": "asset/fonts/Ringbearer.ttf",
       "sha1": "09d5fbc6eaf53728edfd1fc5c9266e3532b73fe1"
     }
   ]

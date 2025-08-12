@@ -1,10 +1,11 @@
 import { useContext } from 'react';
-import { Image, StyleProp, ImageStyle, StyleSheet } from 'react-native';
+import { Image, StyleProp, ImageStyle, StyleSheet, Dimensions } from 'react-native';
 import { ThemeContext } from '../../context/ThemeContext';
 
 interface Props {
     style?:  StyleProp<ImageStyle>
 }
+const {width, height} = Dimensions.get('window');
 export const LogoImg = ({style}: Props) => {
     const {isDark} = useContext(ThemeContext);
     const logoImg = isDark ?
@@ -17,12 +18,12 @@ export const LogoImg = ({style}: Props) => {
 };
 const styles = StyleSheet.create({
     logoImg:{
-        width: 300,
-        height: 300,
+        width: width * 0.9,
+        height: height * 0.5,
         opacity: 0.3,
         position: 'absolute',
-        top: -12,
-        right: 40,
+        top: height * 0.38,
+        right: width * 0.05,
     },
 });
 

@@ -14,8 +14,8 @@ const {width, height} = Dimensions.get('window');
 export const HomeSc = ({navigation}:Props) => {
 const {top} = useSafeAreaInsets();
     return(
-        <CustomView style={{marginTop: top}}>
-          <ScrollView>
+        <CustomView >
+          <ScrollView style={{marginTop: top}} showsVerticalScrollIndicator={false}>
             <Card style={styles.cardContainer}>
                 <BannerName/>
                 <View style={styles.rightButton}>
@@ -37,10 +37,6 @@ const {top} = useSafeAreaInsets();
                         <View style={styles.ViewInfo2}>
                             <Icons name="pin" size={15}/>
                             <Texto text="Full-Stack Developer" />
-                        </View>
-                        <View style={styles.ViewInfo2}>
-                            <Icons name="gift" size={15}/>
-                            <Texto text="Agosto 1993" />
                         </View>
                     </View>
                 </Card>
@@ -178,6 +174,7 @@ const styles = StyleSheet.create({
     },
     h1:{
         fontSize:20,
+        fontFamily: 'Ringbearer',
     },
     emailCard:{
         backgroundColor: '#0b2562',

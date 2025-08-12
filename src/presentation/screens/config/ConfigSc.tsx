@@ -4,12 +4,19 @@ import { CustomView, MenuConfig, SubTitle } from '../../components';
 import { ScrollView } from 'react-native-gesture-handler';
 import { cuenta, cuentaOn, helper, info, legal, premium } from '../../../data/dataConfig';
 import { useAuthStore } from '../../store';
+import { ButtonDarkLight } from '../../components/ui/ButtonDarkLight';
 
 export const ConfigSc = () => {
     const {status} = useAuthStore();
   return (
     <CustomView margin style={styles.container}>
-        <ScrollView>
+        <ScrollView
+        showsVerticalScrollIndicator={false}
+        >
+          <View style={styles.buttonTheme} >
+          <ButtonDarkLight/>
+          <View style= {styles.separador} />
+          </View>
           <SubTitle  text="Premium" safe />
           {premium.map((pri,index) => (<MenuConfig key={pri.component} {...pri} isFirst={index === 0} isLast={index === premium.length - 1} />))}
           <View style= {styles.separador} />
@@ -36,19 +43,19 @@ export const ConfigSc = () => {
               <MenuConfig key={pri.component} {...pri} isFirst = {index === 0}  isLast = {index === legal.length - 1}/>
             ))}
           <View style= {styles.separador} />
-
         </ScrollView>
     </CustomView>
   );
 };
-
-
-
 const styles = StyleSheet.create({
  separador:{
     marginTop:30,
     },
  container:{
     paddingBottom: 90,
+    },
+ buttonTheme:{
+    flexDirection: 'row-reverse',
+    marginRight: 7.5,
     },
 });

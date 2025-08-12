@@ -51,7 +51,8 @@ export const globalStyles = StyleSheet.create({
     },
     subTitle: {
         fontSize: 20,
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
         color: colors.text,
+        fontFamily: 'Ringbearer',
       },
 });

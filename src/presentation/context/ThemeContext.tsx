@@ -14,17 +14,19 @@ export const ThemeContext = createContext({} as ThemeContextProps);
 export const ThemeProvider = ({children}: PropsWithChildren) => {
     const colorScheme = useColorScheme();
     const [currentTheme, setCurrentTheme] = useState<ThemeColor>('light');
-    const isDark = colorScheme === 'dark';
+    const [switchUser, isSwitchUser] = useState(false);
+    const isDark = currentTheme === 'dark';
     const colors = isDark ? darkColors : lightColors;
     useEffect(() =>{
-        if(colorScheme === 'dark') {
+        if(!switchUser && colorScheme === 'dark') {
             setCurrentTheme('dark');
         } else {
             setCurrentTheme('light');
         }
-    },[colorScheme]);
+    },[colorScheme, switchUser]);
     const setTheme = ( theme : ThemeColor) => {
         setCurrentTheme(theme);
+        isSwitchUser(true);
     };
     return (
         <NavigationContainer>

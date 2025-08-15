@@ -20,6 +20,7 @@ export const AuthProvider = ({children}: PropsWithChildren) => {
                     routes: [{ name: 'HomeSc' }],
                 });
         }else {
+          console.log('entrando al unauthenticated');
             navigation.reset({
                     index: 0,
                     routes: [{ name: 'HeroeSc'}],

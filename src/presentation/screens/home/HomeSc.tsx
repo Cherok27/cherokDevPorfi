@@ -40,7 +40,6 @@ const {top} = useSafeAreaInsets();
                         </View>
                     </View>
                 </Card>
-                <View style={styles.Separator}/>
                 <Card style={styles.lineCardContainer}>
                     <Texto text="Últimos Proyectos" style={styles.h1}/>
                     <LineCard style={styles.lineCard}/>
@@ -78,7 +77,7 @@ const {top} = useSafeAreaInsets();
                     <LineCard style={styles.lineCard}/>
                 </Card>
                 <View style={styles.rowCards}>
-                    <ScrollView horizontal ={true}>
+                    <ScrollView horizontal ={true} showsHorizontalScrollIndicator={false}>
                     <Card>
                         <Image style={styles.imageCenter} resizeMode="contain" source={require('../../assets/node.png')}/>
                     </Card>
@@ -111,17 +110,17 @@ const {top} = useSafeAreaInsets();
                 </Card>
                 <View style={styles.rowCards}>
                   <Pressable style={styles.flex1} onPress={() => emailPage('josecarlosrh93@gmail.com')}>
-                  <Card style={styles.emailCard} >
-                      <IconCustom name="mail"  color="white"/>
-                      <Texto text= "Email:" style={styles.emailText} />
-                      <Texto text= "josecarlosrh93@gmail.com" style={styles.emailText} />
-                  </Card>
+                    <Card style={styles.emailCard} >
+                        <IconCustom name="mail"  color="white"/>
+                        <Texto text= "Email:" style={styles.emailText} />
+                        <Texto text= "josecarlosrh93@gmail.com" style={styles.emailText} />
+                    </Card>
                   </Pressable>
                   <Pressable onPress={() => webPage('https://github.com/Cherok27')}>
-                  <Card style={styles.githubCard}>
-                      <IconCustom name="logo-github" color="white"/>
-                      <Texto text="@Cherok27" style={styles.emailText}/>
-                  </Card>
+                    <Card style={styles.githubCard}>
+                        <IconCustom name="logo-github" color="white"/>
+                        <Texto text="@Cherok27" style={styles.emailText}/>
+                    </Card>
                   </Pressable>
                 </View>
                 <View style={styles.Separator}/>
@@ -137,7 +136,6 @@ const styles = StyleSheet.create({
         borderLeftWidth: 0.5,
         borderRightWidth: 0.5,
         borderRadius: 0,
-        // marginTop: top,
     },
     Separator:{
         marginTop:20,

@@ -5,8 +5,8 @@ import { IconCustom } from '../../icons/Icons';
 import { ThemeContext } from '../../context/ThemeContext';
 
 export const ButtonDarkLight = () => {
-    const [isLight, setIsLight] = React.useState(true);
-    const { setTheme , isDark} = useContext(ThemeContext);
+  const { setTheme , isDark} = useContext(ThemeContext);
+    const [isLight, setIsLight] = React.useState(isDark);
     console.log(isLight);
     console.log( setTheme ,isDark);
     const changeTheme = (pri: boolean) =>{
